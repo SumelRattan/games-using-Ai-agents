@@ -12,22 +12,22 @@ I will concentrate on the following four games, each allowing for unique heurist
 
 ### ● Sliding Puzzle (8-puzzle) 
     ○ Heuristics: Manhattan distance (simple) vs. Misplaced Tiles (more complex)
-    ![PuzzleImg](https://github.com/user-attachments/assets/2b42c761-057b-4331-a246-179aaed8fb5e)
+![PuzzleImg](https://github.com/user-attachments/assets/2b42c761-057b-4331-a246-179aaed8fb5e)
 
   
 ### ● MazeSolving (grid-based) 
     ○ Heuristics: Euclidean distance (simple) vs. an advanced heuristic that factors in obstacle density and path complexity 
-    ![MazePuzzle](https://github.com/user-attachments/assets/a923187e-aed5-4efa-9880-62c20fda68c3)
+![MazePuzzle](https://github.com/user-attachments/assets/a923187e-aed5-4efa-9880-62c20fda68c3)
 
   
 ### ● SnakeGame 
     ○ Heuristics: Distance to food (simple) vs. an extended heuristic that accounts for path safety and self-collision avoidance
-    ![AStar](https://github.com/user-attachments/assets/631803c0-7796-43f1-ba5a-a665fc17ae3b)
+![AStar](https://github.com/user-attachments/assets/631803c0-7796-43f1-ba5a-a665fc17ae3b)
 
     
 ### ● Rubik’s Cube 
     ○ Heuristics: Colour mismatches to compare A* and Uniform Cost search
-    ![uniform metric](https://github.com/user-attachments/assets/f5839ec4-2a43-4bfe-87d7-5dccfbdae812)
+![uniform metric](https://github.com/user-attachments/assets/f5839ec4-2a43-4bfe-87d7-5dccfbdae812)
 
 
 ## Algorithms 
