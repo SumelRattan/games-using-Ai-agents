@@ -1,29 +1,49 @@
-## ISTA 450 and INFO 550 Course Project
-#### *Please read the following instructions very carefully, and let me know as soon as possible if you have any questions! I am here to help.*
+## Heuristic Search for Puzzle Solving Games
 
-**Overview:** The course project is an opportunity to explore AI applications and concepts that go beyond what we will learn in class or read in the textbook. Your project should focus on comparing AI algorithms across a range of novel problems. By completing the project, you will develop the skills necessary to choose the right AI algorithm for whatever problem you are asked to solve. 
+The objective of this project is to compare search-based algorithms to determine the most efficient strategies for solving specific puzzles and games, focusing on A*, Uniform Cost Search, and Greedy Best-First Search. This project will analyze how different heuristics—both simple and domain-specific—affect algorithm performance. The evaluation metrics include speed, solution quality (accuracy), and computational resource usage (memory and processing time).
 
-**Getting Started:** To get started, please use this link to create a GitHub repository for your code. You must create this repository before submitting your project proposal (see below).
+## Problem Statement 
 
-**Topic:** Selecting a topic requires: (i) choosing the AI algorithm(s) you will use and (ii) choosing the problem(s) you will apply them to. When making these choices, bear in mind that the primary aim of your project will be to compare the performance of algorithms across problems. This might take the form of comparing a single algorithm across multiple problems, comparing multiple algorithms across multiple problems, or comparing multiple algorithms on a single problem. A good rule of thumb is that the fewer algorithms you cover, the more problems I will expect (and vice versa). All students must select at least one problem not covered in the course. *Graduate students must also select at least one algorithm not covered in the course. Undergraduates may complete the graduate requirement for extra credit.*
+The primary challenge in puzzle-solving using search-based algorithms is identifying heuristics that balance search speed and solution quality without over-consuming computational resources. While simpler heuristics, such as Manhattan distance, offer computational efficiency, they may not always yield the optimal solution in the shortest time. In contrast, more complex, domain-specific heuristics could lead to better results but might demand higher memory and processing power. This project will compare the performance of search algorithms on four selected puzzles, each featuring a domain-specific heuristic, to analyze the trade-offs between simple and complex heuristics.
 
-- **Note:** You are not required to implement your chosen algorithms right away, so don't be afraid to choose algorithms covered later in the course. See timeline below for more details.
+## Games and Heuristics 
 
-**Timeline:** The project involves three separate submissions: (1) a project proposal, (2) a progress report, and (2) a final report. There are are drop boxes for these submissions under "Assignments.'' Exact due dates can be found on the syllabus, but (1) will be due around the end of the first full month of the course, (2) will be due around the end of the second full month of the course, and (3) will be due at the end of the course.
+I will concentrate on the following four games, each allowing for unique heuristic designs: 
 
-**Part 1, Project Proposal:** For the project proposal, you will (i) identify the algorithms and problems you intend to cover, (ii) identify the comparisons you plan to make, (iii) explain what you think this comparison will show and why. Proposals are graded on effort, but I will provide feedback about the direction, scope, and feasibility of your project. You should expect to revise your project plans in light of this feedback. Your proposal should be 1-2 double-spaced pages.
+### ● Sliding Puzzle (8-puzzle) 
+    ○ Heuristics: Manhattan distance (simple) vs. Misplaced Tiles (more complex)
+    ![PuzzleImg](https://github.com/user-attachments/assets/2b42c761-057b-4331-a246-179aaed8fb5e)
 
-*Note:* It may help to think about your project as answering a question you find interesting and choose your topic accordingly. For example, when are the computational costs of using a more complicated heuristic justified by the increased efficiency of search? In this case, you might compare an algorithm with no heuristic, a simple heuristic, and a complicated heuristic across different problem types and problem difficulty levels.
+  
+### ● MazeSolving (grid-based) 
+    ○ Heuristics: Euclidean distance (simple) vs. an advanced heuristic that factors in obstacle density and path complexity 
+    ![MazePuzzle](https://github.com/user-attachments/assets/a923187e-aed5-4efa-9880-62c20fda68c3)
 
-**Part 2, Progress Report:** Once you have read and incorporated my feedback on your proposal, your next goal will be to implement the code needed for your chosen problem(s). As such, your project report will consist of (i) a revised version of your proposal and (ii) a link to a GitHub repository with working problem code. This code should be set up with random agents and visually represent the problem in some way. Your final project code will replace these random agentswith agents that use your chosen algorithms. (If this doesn't sound like something that makes sense given your topic, please consult with me.) You will be graded on the basis of whether your code appears to work as expected and whether you have made appropriate revisions to your proposal. Here are two examples:
+  
+### ● SnakeGame 
+    ○ Heuristics: Distance to food (simple) vs. an extended heuristic that accounts for path safety and self-collision avoidance
+    ![AStar](https://github.com/user-attachments/assets/631803c0-7796-43f1-ba5a-a665fc17ae3b)
 
-- Suppose you want to compare the performance of several algorithms on the game checkers. You will write code for this game and for an random agent class that selects legal moves at random. When I run your code, I should see a simple visual representation of a game between two random agents.
-- Suppose you want to compare the performance of several algorithms on the traveling salesperson problem (i.e., the problem of finding the shortest route that passes through all cities on a map and returns to the starting position). For this problem, you will probably want to generate several test maps, each with a set of cities and a network of roads connecting them. These could be generated randomly, based on real world maps, or hand-crafted. Next, you will want to write code for a random agent class that selects the next city to visit at random until all cities have been visited and the starting city is reached. When I run your code, I should see some visual representation of these random routes (e.g., an ordered sequence of cities visited on the route or a map with a line representing the agent's route). 
+    
+### ● Rubik’s Cube 
+    ○ Heuristics: Colour mismatches to compare A* and Uniform Cost search
+    ![uniform metric](https://github.com/user-attachments/assets/f5839ec4-2a43-4bfe-87d7-5dccfbdae812)
 
-**Part 3, Final Report:** Your final report should(i) briefly introduce your project, (ii) explain the AI algorithms and problems have chosen,(iii) describe the performance comparisons you will make, (iv) explain what results you expected, and (v) explain why you expected those results. For these sections (i-v), you may copy any relevant material from your project proposal. Next, your final report should (vi) describe the results you actually observed and (vii) try to explain any results that surprised you. Your final report will not be graded on whether you made the correct prediction, but will be graded on whether you appear to have implemented a sufficient number of problem(s)/algorithm(s) correctly and whether you have offered a plausible and thoughtful explanation of your results. Your final report should be approximately 6-7 double-spaced pages in length and include a link to a GitHub repository with the final version of your project code.
 
-*Note:* You should write your report on the assumption that I have never heard of the algorithms you are comparing. I need not be able to implement them based on your explanation, but I should fully understand (i) the basic idea of how they work and (ii) any differences between them that are relevant to the comparisons you plan to make or the results that you predict.
+## Algorithms 
 
-**Technical:** Your code should be set up to generate allcomparison results when I run it. If you generate figures with matplotlib, the code should also generate those figures. If you generated the data in Python and created your figures in another program (e.g., Excel)--that is fine so long as the data is generated by your code when I run it (e.g., in the form of a .csv file). You should plan to write all of your code from scratch. This means implementing both the code for your problem and your algorithms. Please annotate your code with comments that will help me understand it. This is vital in assigning partial credit if something is wrong with your implementation.Visual representations of the problems/solutions may be as simple as they need to be to clearly convey the relevant information (e.g., a grid of characters printed to the terminal to represent a checkerboard). I will run all code within a Python environment that includes only NumPy, SciPy, matplotlib, and OpenCV (for displaying images). If your project requires another library, you must clear it with me in advance.
+### ● A*: Combines the cost to reach the current node and the heuristic to evaluate the most promising path. 
+### ● Uniform Cost Search: Considers only the path cost without any heuristic, ensuring the lowest-cost path is prioritized. 
+### ● Greedy Best-First Search: Relies solely on the heuristic value to choose the next node, providing insight into heuristic influence on performance.
 
-**Academic Integrity:** You are not permitted to use any code that you did not personally write--whether it comes from another human being or an AI system, like ChatGPT. You may read articles on algorithms, converse with an AI system about key concepts, or gather general information from any source so long as you clearlycite it in the references of your final report (e.g., by linking directly to your AI chat log). You must make regular updates to your GitHub repository and describe any important changes you have made. I expect at least 10 commits before your progress report and 10 additional commits before your final report. Failure to do so will result in (i) a significant reduction in your project grade and (ii) a careful inspection of your code for plagiarism. If plagiarism is found, the sanctions described in the syllabus will apply.
+## Conclusion 
+In conclusion, this project has provided valuable insights into the performance and trade-offs of various AI search algorithms applied to four different puzzle-solving problems. 
+
+Across all the games, A* emerged as the most balanced algorithm, effectively combining speed and accuracy in problems like the Sliding Puzzle, Maze Solver, and Snake Game, although its performance was inconsistent at times. 
+
+Greedy Best-First Search demonstrated stable performance with moderate results, making it suitable for situations where speed is prioritized over optimality, especially in the Snake Game and Rubik's Cube. 
+On the other hand, Uniform Cost Search showed its strength in problems requiring guaranteed optimality, such as the Sliding Puzzle and Rubik’s Cube, but its performance was often hampered by inefficiencies and a tendency to get stuck in more complex scenarios, particularly in the Snake Game. 
+
+This project has underscored the importance of selecting the appropriate algorithm based on the specific problem's constraints and objectives. Whether optimizing for speed, accuracy, or resource efficiency, the algorithms demonstrated distinct strengths and weaknesses, reinforcing the value of a strategic approach to problem-solving. 
+
+I would like to express my sincere gratitude to my professor for providing me with the opportunity to explore and experiment with different AI algorithms across diverse problem statements. This experience has deepened my understanding of algorithmic strategies and their practical applications, and I am thankful for the chance to engage in such a rich learning process.
